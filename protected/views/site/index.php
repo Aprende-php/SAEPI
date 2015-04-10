@@ -18,3 +18,33 @@ $this->pageTitle=Yii::app()->name;
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
 should you have any questions.</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Rut</th>
+			<th>Edad</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ruben</td>
+			<td>Tejano</td>
+			<td>18.108.559-2</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>Ruben</td>
+			<td>Tejano</td>
+			<td>18.108.559-2</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>Ruben</td>
+			<td>Tejano</td>
+			<td>18.108.559-2</td>
+			<td>22</td>
+		</tr>
+	</tbody>
+</table>
