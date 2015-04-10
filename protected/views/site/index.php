@@ -1,6 +1,6 @@
+
 <?php
 /* @var $this SiteController */
-
 $this->pageTitle=Yii::app()->name;
 ?>
 
@@ -21,30 +21,24 @@ should you have any questions.</p>
 <table class="table">
 	<thead>
 		<tr>
-			<th>Nombre</th>
-			<th>Apellido</th>
+			<th>Nombre Completo</th>
 			<th>Rut</th>
+			<th>Fecha Nacimiento</th>
 			<th>Edad</th>
+			<th>Creación</th>
+			<th>Modificación</th>
 		</tr>
 	</thead>
 	<tbody>
+	<?php foreach ($model as $fila): ?>
 		<tr>
-			<td>Ruben</td>
-			<td>Tejano</td>
-			<td>18.108.559-2</td>
-			<td>22</td>
+			<td><?php echo $fila->PER_NOMBRES." ".$fila->PER_APELLIDOS; ?></td>
+			<td><?php echo $fila->PER_RUT; ?></td>
+			<td><?php echo $fila->PER_NACIMIENTO; ?></td>
+			<td><?php echo $fila->PER_EDAD; ?></td>
+			<td><?php echo $fila->PER_CREATE; ?></td>
+			<td><?php echo $fila->PER_MODIFIED; ?></td>
 		</tr>
-		<tr>
-			<td>Ruben</td>
-			<td>Tejano</td>
-			<td>18.108.559-2</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Ruben</td>
-			<td>Tejano</td>
-			<td>18.108.559-2</td>
-			<td>22</td>
-		</tr>
+	<?php endforeach ?>
 	</tbody>
 </table>
