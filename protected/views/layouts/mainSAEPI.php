@@ -26,17 +26,111 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
+	 <?php
+		$this->widget('bootstrap.widgets.BsNavbar', array(
+			'collapse' => true,
+			'brandLabel'=>BsHtml::icon(BsHtml::GLYPHICON_FIRE).' SYSACC',
+			'brandUrl' => Yii::app()->homeUrl,
+			/*'position' => BsHtml::NAVBAR_POSITION_FIXED_TOP,
+			'htmlOptions' => array(
+			        'containerOptions' => array(
+			            'fluid' => true
+			        ),
+			    ),*/
+//'color' => BsHtml::NAVBAR_COLOR_INVERSE,
+			'items' => array(
+				//dropdown
+				
+				array(
+					'class' => 'bootstrap.widgets.BsNav',
+					'type' => 'navbar',
+					'activateParents' => true,
+					'items' => array(
+						array(
+							'visible' => true,
+							'label' => 'Administración',
+							'url' => array('/Usuario/index'),
+							'icon'=> BsHtml::GLYPHICON_COG,
+							'items' => array(
+								BsHtml::dropDownHeader('Administración de Empresas'),
+								array('label' => 'Administrar Empresa','url' => array('/Empresa/admin'),'visible' => true),
+								array('label' => 'Agregar Empresa','url' => array('/Empresa/create'),'visible' => true),
+								BsHtml::menuDivider(),
+								
+								BsHtml::dropDownHeader('Administración de Usuarios'),
+								array('label' => 'Administrar Usuarios','url' => array('/persona/admin'),'visible' => true),
+								array('label' => 'Agregar Persona','url' => array('/persona/create'),'visible' => true),
+								)
+						)
+					)
+				),
+				array(
+					'class' => 'bootstrap.widgets.BsNav',
+					'type' => 'navbar',
+					'activateParents' => true,
+					'items' => array(
+						array(
+							'visible' => true,
+							'label' => 'Accidentes',
+							'url' => array('/Usuario/index'),
+							'icon'=> BsHtml::GLYPHICON_SAVED,
+							'items' => array(
+								BsHtml::dropDownHeader('Accidentabilidad'),
+								array('label' => 'Agregar Tasa de accidentes','url' => array('/indicador/create'),'visible' => true),
+								BsHtml::menuDivider(),
+								BsHtml::dropDownHeader('Accidentes de trabajo'),
+								array('label' => 'Agregar Accidente','url' => array('/accidente/ingresarForestal'),'visible' => true),
+							)
+						)
+					)
+				),
+				array(
+					'class' => 'bootstrap.widgets.BsNav',
+					'type' => 'navbar',
+					'activateParents' => true,
+					'items' => array(
+						array(
+							'label' => 'Generar Estadisticas',
+							'url' => array('/Usuario/index'),
+							'icon'=> BsHtml::GLYPHICON_SIGNAL,
+							'items' => array(
+								array('label' => 'Seguridad por empresa','url' => array('/estadistica/seg_emp/'),'visible' => true),
+								array('label' => 'Seguridad de empresas por area','url' => array('/estadistica/seg_emp_are/'),'visible' => true),
+								array('label' => 'Seguridad planta con areas','url' => array('/estadistica/seg_plan_are/'),'visible' => true),
+								array('label' => 'Seguridad de empresas con otras empresas','url' => array('/estadistica/seg_emp_emp/'),'visible' => true),
+								array('label' => 'Accidentes mensuales por empresas','url' => array('/estadistica/acc_men_emp/'),'visible' => true),
+								array('label' => 'Accidentes Anuales Area Bosque','url' => array('/estadistica/acc_anu_are_bosque/'),'visible' => true),
+							)
+						)
+					)
+				),
+				array(
+					'class' => 'bootstrap.widgets.BsNav',
+					'type' => 'navbar',
+					'activateParents' => true,
+					'items' => array(
+						array(
+							'label' => 'Bienvenido Ruben',
+							'url' => array(
+								'/site/index'
+							),
+					'icon'=>BsHtml::GLYPHICON_USER,
+							'items' => array(
+
+								array('icon'=>BsHtml::GLYPHICON_USER,'label' => 'Cambiar Contraseña','url' => array('/usuario/changepassword'),'visible' => !Yii::app()->user->isGuest),
+								BsHtml::menuDivider(),
+								array('icon'=>BsHtml::GLYPHICON_LOG_OUT,'label' => 'Cerrar Sesión','url' => array('/usuario/logout'),'visible' => !Yii::app()->user->isGuest)
+						
+							)
+						)
+					),
+					'htmlOptions' => array(
+						'pull'=> BsHtml::NAVBAR_NAV_PULL_RIGHT
+					),
+				),
+			)
+		)
+	);?>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
