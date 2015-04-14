@@ -8,13 +8,9 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Sistema de Apoyo de Evaluación de Proyectos Informáticos',
-<<<<<<< HEAD
-
-=======
 	'aliases' => array(
 	    'bootstrap' => 'ext.bootstrap',
 	),
->>>>>>> origin/master
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -56,16 +52,9 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		
-<<<<<<< HEAD
-		// 'db'=>array(
-		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		// ),
-=======
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
->>>>>>> origin/master
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
