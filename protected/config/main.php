@@ -8,7 +8,13 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Sistema de Apoyo de Evaluación de Proyectos Informáticos',
+<<<<<<< HEAD
 
+=======
+	'aliases' => array(
+	    'bootstrap' => 'ext.bootstrap',
+	),
+>>>>>>> origin/master
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -16,6 +22,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'bootstrap.behaviors.*',
+		'bootstrap.helpers.*',
+		'bootstrap.widgets.*'
 	),
 
 	'modules'=>array(
@@ -25,6 +34,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			'generatorPaths' => array('bootstrap.gii'),
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		
@@ -47,9 +57,15 @@ return array(
 			),
 		),
 		
+<<<<<<< HEAD
 		// 'db'=>array(
 		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		// ),
+=======
+		'db'=>array(
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+		),
+>>>>>>> origin/master
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
