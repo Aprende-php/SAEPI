@@ -29,7 +29,7 @@ $cs
  * JavaScripts
  */
 $cs
-    ->registerCoreScript('jquery',CClientScript::POS_END)
+    ->registerScriptFile($baseUrl.'/js/jquery.min.js',CClientScript::POS_END)
     ->registerCoreScript('jquery.ui',CClientScript::POS_END)
     ->registerScriptFile($baseUrl.'/js/bootstrap.min.js',CClientScript::POS_END)
 
@@ -44,7 +44,7 @@ $cs
     <script src="<?php echo Yii::app()->baseUrl ?>/js/html5shiv.js"></script>
     <script src="<?php echo Yii::app()->baseUrl ?>/js/respond.min.js"></script>
 <![endif]-->
-?>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -59,7 +59,7 @@ $cs
 	 <?php
 		$this->widget('bootstrap.widgets.BsNavbar', array(
 			'collapse' => true,
-			'brandLabel'=>BsHtml::icon(BsHtml::GLYPHICON_FIRE).' SYSACC',
+			'brandLabel'=>BsHtml::icon(BsHtml::GLYPHICON_FIRE).' SAEPI',
 			'brandUrl' => Yii::app()->homeUrl,
 			/*'position' => BsHtml::NAVBAR_POSITION_FIXED_TOP,
 			'htmlOptions' => array(
@@ -149,7 +149,8 @@ $cs
 
 								array('icon'=>BsHtml::GLYPHICON_USER,'label' => 'Cambiar Contraseña','url' => array('/usuario/changepassword'),'visible' => !Yii::app()->user->isGuest),
 								BsHtml::menuDivider(),
-								array('icon'=>BsHtml::GLYPHICON_LOG_OUT,'label' => 'Cerrar Sesión','url' => array('/usuario/logout'),'visible' => !Yii::app()->user->isGuest)
+								array('icon'=>BsHtml::GLYPHICON_LOG_OUT,'label' => 'Cerrar Sesión','url' => array('/site/logout'),'visible' => !Yii::app()->user->isGuest),
+								array('icon'=>BsHtml::GLYPHICON_LOG_OUT,'label' => 'iniciar Sesión ilich ql','url' => array('/site/login'),'visible' => Yii::app()->user->isGuest)
 						
 							)
 						)
