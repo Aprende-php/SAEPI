@@ -14,7 +14,37 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+<?php 
+	$cs        = Yii::app()->clientScript;
+	$baseUrl = Yii::app()->request->baseUrl;
 
+/**
+ * StyleSHeets
+ */
+$cs
+    ->registerCssFile($baseUrl.'/css/bootstrap.css')
+    ->registerCssFile($baseUrl.'/css/bootstrap-theme.css');
+
+/**
+ * JavaScripts
+ */
+$cs
+    ->registerCoreScript('jquery',CClientScript::POS_END)
+    ->registerCoreScript('jquery.ui',CClientScript::POS_END)
+    ->registerScriptFile($baseUrl.'/js/bootstrap.min.js',CClientScript::POS_END)
+
+    ->registerScript('tooltip',
+        "$('[data-toggle=\"tooltip\"]').tooltip();
+        $('[data-toggle=\"popover\"]').tooltip()"
+        ,CClientScript::POS_READY);
+
+?>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="<?php echo Yii::app()->baseUrl ?>/js/html5shiv.js"></script>
+    <script src="<?php echo Yii::app()->baseUrl ?>/js/respond.min.js"></script>
+<![endif]-->
+?>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
