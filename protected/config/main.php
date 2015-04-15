@@ -12,24 +12,24 @@ return array(
 	    'bootstrap' => 'ext.bootstrap',
 	),
 	// preloading 'log' component
-	'preload'=>array('log'),
+	// 'preload'=>array('log'),
 
+   	'theme'=>'principal',
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		// Accesos a Bootstrap
 		'bootstrap.behaviors.*',
 		'bootstrap.helpers.*',
 		'bootstrap.widgets.*'
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			// Extencions de Bootstrap
 			'generatorPaths' => array('bootstrap.gii'),
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -42,8 +42,7 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		// uncomment the following to enable URLs in path-format
-		
+		// Limpia URL
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -70,21 +69,21 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
-			),
-		),
+		// 'log'=>array(
+		// 	'class'=>'CLogRouter',
+		// 	'routes'=>array(
+		// 		array(
+		// 			'class'=>'CFileLogRoute',
+		// 			'levels'=>'error, warning',
+		// 		),
+		// 		// uncomment the following to show log messages on web pages
+		// 		/*
+		// 		array(
+		// 			'class'=>'CWebLogRoute',
+		// 		),
+		// 		*/
+		// 	),
+		// ),
 	),
 
 	// application-level parameters that can be accessed
