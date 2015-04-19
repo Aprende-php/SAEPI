@@ -19,10 +19,8 @@
     ?>
   </head>
   <body>
-  <!-- Contenido -->
-  <div class="container">
-  <?php echo $content ?>  
-  </div>
-  <!-- fin contenido -->
+    <div class="container">
+      <?php echo $content ?>
+    </div><!-- container -->
   </body>
 </html>
