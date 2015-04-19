@@ -4,25 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
-    <!-- Bootstrap -->
-    <link href="<?php echo Yii::app()->request->baseUrl ?>/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title><?php echo $this->pageTitle ?></title>
+    <?php 
+      $cs      = Yii::app()->clientScript;
+      $baseUrl = Yii::app()->request->baseUrl;
+    // StyleSHeets
+    $cs
+        ->registerCssFile($baseUrl.'/css/bootstrap.min.css');
+    // JavaScripts
+    $cs
+        ->registerScriptFile($baseUrl.'/js/jquery.min.js',CClientScript::POS_END)
+        ->registerScriptFile($baseUrl.'/js/jquery-ui.min.js',CClientScript::POS_END)
+        ->registerScriptFile($baseUrl.'/js/bootstrap.min.js',CClientScript::POS_END);
+    ?>
   </head>
   <body>
-    <h1>Hello, world! añade Hólá</h1>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo Yii::app()->request->baseUrl ?>/js/bootstrap.min.js"></script>
+  <!-- Contenido -->
+  <div class="container">
+  <?php echo $content ?>  
+  </div>
+  <!-- fin contenido -->
   </body>
 </html>
