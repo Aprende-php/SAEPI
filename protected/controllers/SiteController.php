@@ -29,8 +29,12 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+<<<<<<< HEAD
 		//$model=Personas::model()->findAll();
 		$this->render('index',array());
+=======
+		$this->render('index');
+>>>>>>> origin/Prueba-de-Git
 	}
 
 	/**
