@@ -46,7 +46,7 @@
           'items' => array(
             array(
               'visible' => TRUE,
-              'label' => 'Administración',
+              'label' => 'Administración del Sistema',
               'url' => array('/Usuario/index'),
               'icon'=> BsHtml::GLYPHICON_COG,
               'items' => array(
@@ -69,11 +69,11 @@
           'items' => array(
             array(
               'visible' => TRUE,
-              'label' => 'Accidentes',
+              'label' => 'Gestión de Proyectos',
               'url' => array('/Usuario/index'),
               'icon'=> BsHtml::GLYPHICON_SAVED,
               'items' => array(
-                BsHtml::dropDownHeader('Accidentabilidad'),
+                BsHtml::dropDownHeader('Proyectos'),
                 array('label' => 'Agregar Tasa de accidentes','url' => array('/indicador/create'),'visible' => TRUE),
                 BsHtml::menuDivider(),
                 BsHtml::dropDownHeader('Accidentes de trabajo'),
@@ -88,9 +88,9 @@
           'activateParents' => true,
           'items' => array(
             array(
-              'label' => 'Generar Estadisticas',
+              'label' => 'Revisar Informes',
               'url' => array('/Usuario/index'),
-              'icon'=> BsHtml::GLYPHICON_SIGNAL,
+              'icon'=> BsHtml::GLYPHICON_LIST_ALT,
               'items' => array(
                 array('label' => 'Seguridad por empresa','url' => array('/estadistica/seg_emp/'),'visible' => TRUE),
                 array('label' => 'Seguridad de empresas por area','url' => array('/estadistica/seg_emp_are/'),'visible' => TRUE),
